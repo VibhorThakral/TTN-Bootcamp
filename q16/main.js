@@ -1,28 +1,34 @@
 // Q16 Add cross button on row and bind click function which make a delete request to server, after success event remove the row from dom
-$(function() {
-  show_data();
+$(function(){
+  var content = "<table>";
+  var str = "ajax-main";
+  $.ajax({url: "https://jsonplaceholder.typicode.com/users", async: false, success: function(result) {
+      for(i=0;i<result.length;i++){
+          content +=  '<tr id = '+ result[i].id +'><td>' + result[i].id + '</td><td>'+ result[i].name+ '</td><td>' + result[i].username + '</td><td>' + result[i].email + '</td><td><button value='+ i +' class='+ str +'>X</button></td></tr>' ;
+      }
+      content += "</table>"
+      $('#here_table').append(content); 
+  }}); 
 
-  function delete_data() {
+
+ $(".ajax-main").on("click",function(){
+    var id = $(this).val();
     $.ajax({
-      headers: {
-        'Access-Control-Allow-Origin' : "http://127.0.0.1:5500/", 
-        'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, DELETE'
-      },
-      url: '/data.txt',
+      url: 'https://jsonplaceholder.typicode.com/users/' + id+1,
       type: 'DELETE',
       success: function(data) {
-        show_data();
+        $("table tr button").each(function(){
+         if($(this).val() == id)
+         {          
+             var i = parseInt(id) + 1;
+             $("#"+i).remove();
+         }
+        });
+      },
+      error: function(status, err) {
+        console.log('There was an error: ' + err);
       }
-    });
-  }
+    });  
 
-  function show_data() {
-    $.get('/q16/data.txt', function(data) {
-      let html;
-      html = '<ul><li>' + data + '<button class="cross delete">x</button></li></ul>';
-      $('.q16').html(html);
-      $('.delete').on('click', delete_data);
-    });
-  }
+ })
 });
-

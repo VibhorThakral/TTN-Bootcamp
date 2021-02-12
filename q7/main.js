@@ -1,11 +1,9 @@
 // Q7 Bind a click function to an "click" element and append next "click" next to it.
 $(function(){
-  $('.q7a').on('click', function(){
-    console.log('Button A Clicked');
-    $('.q7b').trigger('click');
+  let count = 0;
+  $('.q7').on('click', function(){
+    count++;
+    $('.result').text('Clicked ' + count + ' times');
   });
 
-  $('.q7b').on('click', function(){
-    console.log('Button B Clicked');
-  });
 });
