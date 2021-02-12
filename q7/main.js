@@ -3,7 +3,6 @@ $(function(){
   let count = 0;
   $('.q7').on('click', function(){
     count++;
-    $('.result').text('Clicked ' + count + ' times');
+    $('.result').append('Clicked ');
   });
-
 });
