@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS- Selectors,Fonts,Box Model,Positioning,Float & Alignment</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+    <h1 class="heading-bg">Font Properties</h1>
+    <!-- 
+      Font Properties:
+      1. Font-Family
+      2. Font-Size
+      3. Font-Weight
+      4. Font-Variant
+      5. Font-Style
+     -->
+
+    <!-- Converting Font Family of paragraph to Monospace font -->
+    <p ><strong>Font Family Convert to Monospace: </strong><span class="font-mono">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem voluptates magni tenetur dignissimos natus blanditiis.</span></p>
+
+    <!-- Doubling the font size of the p tag -->
+    <p class="font-size-2x">Font Size 2x: Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem voluptates magni tenetur dignissimos natus blanditiis.</p>
+
+    <!-- Giving Multiple Font Weights to text -->
+    <p class="font-size-2x">
+      <span class="fw-100">Font Weight 100</span><br> 
+      <span class="fw-200">Font Weight 200</span><br>
+      <span class="fw-300">Font Weight 300</span><br>
+      <span class="fw-400">Font Weight 400</span><br>
+      <span class="fw-500">Font Weight 500</span><br>
+      <span class="fw-600">Font Weight 600</span><br>
+      <span class="fw-700">Font Weight 700</span><br>
+      <span class="fw-800">Font Weight 800</span><br>
+      <span class="fw-900">Font Weight 900</span><br>
+    </p>
+
+    <!-- Converting Font Variant to Small Caps -->
+    <p class="font-v">Small Caps Font Font-Variant
+    <br>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem voluptates magni tenetur dignissimos natus blanditiis.</p>
+
+    <!-- Font Style -->
+    <p>
+      <span>Normal Font Style</span><br>
+      <span class="fs-i">Italic Font Style</span><br>
+      <span class="fs-o">Oblique Font Style</span><br>
+    </p>
+  
+    <!-- ------------------------------------ -->
+    <hr>
+    <!-- ------------------------------------ -->
+
+    <h1 class="heading-bg">Background Properties</h1>
+    <!-- 
+      Background Properties:
+      1. Background Color
+      2. Background Image
+      3. Background Position
+      4. Background Size
+      5. Background Repeat
+    -->
+
+    <!-- Change Background Color of text to teal -->
+    <p class="bg-teal">
+      TEAL BACKGROUND
+      <br>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste nemo tempora ipsum, vero pariatur error!
+    </p>
+
+    <div class="bg-main">
+      <p><span>
+        Background Image <br>
+        Background Size <br>
+        Background Repeat <br>
+        Background Position <br>
+        All Are Applied In This Div
+      </span></p>
+    </div>
+  
+    <!-- ------------------------------------ -->
+    <hr>
+    <!-- ------------------------------------ -->
+  
+    <h1 class="heading-bg">Pseudo Classes</h1>
+
+    <!-- Selecting the first and last li using the first child and last child selector -->
+    <ul class="child-selector">
+      <li>First</li>
+      <li>Second</li>
+    </ul>
+
+    <!-- 
+      Selecting Even and Odd li elements using nth child selector. 
+      Even Child background cyan
+      Odd Child background green
+    -->
+    <ul class="even-odd-selector">
+      <li>Third</li>
+      <li>Fourth</li>
+      <li>Fifth</li>
+      <li>Sixth</li>
+    </ul>
+
+    <h3>Anchor Links Hover Pseudo State</h3>
+    <a href="#" class="hover-state">Hover For Effect</a>
+    
+    <!-- ------------------------------------ -->
+    <hr>
+    <!-- ------------------------------------ -->
+
+    <h1>Combinators</h1>
+    <!-- 
+      1. Descendant Combinator: Increase the font size of all p elements inside the div with class combinators
+      .combinators p {
+        font-size: 1.5rem;
+      }
+
+      2. Child Selector: Change the background of all the p elements which are child of div with class combinators
+      .combinators > p {
+        background: turquoise;
+      }
+
+      3. Adjacent Sibling Selector: Change the color of p element which is the adjacent sibling of h3 inside the div with class combinators.
+      .combinators h3 + p {
+        color: white;
+      }
+
+      4. General Sibling Selector: Change the background and font-size of divs with class gen-sibling which are general siblings of div with class combinators.
+      .combinators ~ div.gen-sibling {
+        background: yellowgreen;
+        font-size: 1.2rem;
+      }
+
+     -->
+    <div class="combinators">
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio deleniti, alias magni quaerat totam porro.</p>
+      <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dolorem iure cum corrupti, ipsum ut?</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, nostrum quos. Adipisci laudantium cupiditate natus.</p>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit amet impedit a alias saepe molestiae!</p>
+    </div>
+    <div class="gen-sibling">
+      <p>GENERAL SIBLING OF DIV WITH CLASS COMBINATORS</p>
+    </div>
+  
+     <!-- ------------------------------------ -->
+     <hr>
+     <!-- ------------------------------------ -->
+  
+    <h1 class="heading-bg">Attribute Selector</h1>
+
+    <!-- Selecting a tags with target attribute and giving them a background color 
+    a[target] {
+      background: violet;
+    }
+    -->
+    <div class="attribute-selector">
+      <a href="#" target="_blank">Anchor Tag with target Attribute</a>
+      <a href="#">Anchor Tag without target Attribute</a>
+      <a href="#">Anchor Tag without target Attribute</a>
+      <a href="#" target="_blank">Anchor Tag with target Attribute</a>
+    </div>
+    <br>
+    <!-- 
+      Converting Input with type text to have brown background and Input with type button to have teal background
+
+      input[type="text"] {
+        background: brown;
+      }
+
+      input[type="button"] {
+        background: teal;
+        color: white;
+      }
+     -->
+    <div class="form-selectors">
+      <p>Converting Input with type text to have brown background and Input with type button to have teal background</p>
+      <input type="text">
+      <input type="text">
+      <input type="button" value="Submit">
+    </div>
+</body>
+</html>

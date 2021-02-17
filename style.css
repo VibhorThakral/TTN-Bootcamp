@@ -1,0 +1,154 @@
+.heading-bg {
+  background: brown;
+  color: white;
+  padding: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 200;
+  font-size: 2.5rem;
+}
+
+hr {
+  margin: 20px 0;
+  border: 5px solid brown;
+}
+
+/* ***************************
+      FONT PROPERTIES
+*************************** */
+
+/* Font Family */
+.font-mono {
+  font-family: monospace;
+}
+
+/* Font Size */
+.font-size-2x {
+  font-size: 2rem;
+}
+
+/* Font Weight */
+.fw-100 { font-weight: 100; }
+.fw-200 { font-weight: 200; }
+.fw-300 { font-weight: 300; }
+.fw-400 { font-weight: 400; }
+.fw-500 { font-weight: 500; }
+.fw-600 { font-weight: 600; }
+.fw-700 { font-weight: 700; }
+.fw-800 { font-weight: 800; }
+.fw-900 { font-weight: 900; }
+
+/* Font Variant */
+.font-v {
+  font-variant: small-caps;
+}
+
+/* Font Style */
+.fs-i { font-style: italic; }
+.fs-o { font-style: oblique; }
+
+/* ***************************
+    BACKGROUND PROPERTIES
+*************************** */
+
+.bg-teal {
+  background-color: teal;
+  color: white;
+}
+
+.bg-main {
+  height: 400px;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* BACKGROUND PROPERTIES */
+  background-image: url('https://source.unsplash.com/random/1200x1200');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-main p span {
+  color: white;
+  font-size: 1.5rem;
+  background-color: brown;
+}
+
+
+/* ***************************
+    PSEUDO PROPERTIES
+*************************** */
+ul.child-selector li:first-child {
+  background: cyan;
+} 
+
+ul.child-selector li:last-child {
+  background: peru;
+} 
+
+ul.even-odd-selector li:nth-child(even) {
+  background: cyan;
+}
+
+ul.even-odd-selector li:nth-child(odd) {
+  background: seagreen;
+}
+
+a.hover-state {
+  text-decoration: none;
+  color: white;
+  background: teal;
+  padding: 16px 28px;
+  transition: all 0.3s ease-in;
+  font-size: 1.3rem;
+}
+
+a.hover-state:hover {
+  background: brown;
+}
+
+/* ***************************
+        COMBINATORS 
+*************************** */
+
+.combinators p {
+  font-size: 1.5rem;
+}
+
+.combinators > p {
+  background: turquoise;
+}
+
+.combinators h3 + p {
+  color: white;
+}
+
+.combinators ~ div.gen-sibling {
+  background: yellowgreen;
+  font-size: 1.2rem;
+}
+
+/* ***************************
+      ATTRIBUTE SELECTORS 
+*************************** */
+
+.attribute-selector a {
+  text-decoration: none;
+  display: block;
+  font-size: 1.2rem;
+  color: black;
+}
+
+a[target] {
+  background: violet;
+}
+
+input[type="text"] {
+  background: brown;
+}
+
+input[type="button"] {
+  background: teal;
+  color: white;
+}
